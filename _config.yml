@@ -53,3 +53,9 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# jekyll prend en compte les collections pour les projets, analyse _projects, déclare en pages et genere les
+
+collections:
+  projects:
+    output: true
