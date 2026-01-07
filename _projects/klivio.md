@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Klivio
 date: 08/12/2025
 description: Site proposant des formations en ligne.

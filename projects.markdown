@@ -1,11 +1,11 @@
 ---
-layout: page
+layout: default
 title: Mes projets
 permalink: /projets/
 order: 2
 ---
 <!-- format de liste pour afficher les differents projets -->
-<!-- source avec {{}} -->
+<!-- source avec accolade -->
 
 Mes projets :
 
@@ -16,6 +16,5 @@ Mes projets :
             <p>{{ project.description }}</p>
             <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
         </li>
-        <hr>
-    {% endfor%}
+    {% endfor %}
 </ul>
