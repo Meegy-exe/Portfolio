@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: A propos
 permalink: /apropos/
 order: 1
