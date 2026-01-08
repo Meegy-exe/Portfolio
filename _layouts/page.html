@@ -1,1 +1,58 @@
 <!-- structure html à faire -->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+
+<body>
+    <!-- class container pour lensemble de la structure -->
+    <div class="container">
+        <!-- CONTENU DE GAUCHE -->
+        <aside class="colonne-gauche">
+            <div class="profil-perso"></div>
+            <h1>Mon portfolio</h1>
+            <div class="statut">Etudiante à Epitech Lille</div>
+            <nav>
+                <a href="{{ '/' | relative_url }}">Accueil</a>
+                <a href="{{ '/about' | relative_url }}">À propos</a>
+                <a href="{{ '/projects' | relative_url }}">Projets</a>
+                <a href="{{ '/contact' | relative_url }}">Contact</a>
+            </nav>
+        </aside>
+        <!-- CONTENU CENTRAL -->
+        <main class="contenu-principal">
+            {{ content }}
+        </main>
+        <!-- CONTENU DE DROITE -->
+        <!-- Titre et compétence -->
+        <aside class="colonne-droite">
+            <div class="titre-skills">Compétences</div>
+            <div class="skills">
+                <span class="sk">HTML</span>
+                <span class="sk">CSS</span>
+                <span class="sk">JavaScript</span>
+                <span class="sk">Responsive</span>
+                <span class="sk">Tailwind / CSS</span>
+                <span class="sk">Jekyll</span>
+                <span class="sk">Git</span>
+            </div>
+            <br>
+            <!-- Liens réseaux -->
+            <div class="titre-reseaux">Réseaux & liens</div>
+            <div class="reseaux">
+                <ul class="liens-reseaux">
+                    <!-- WARNING reseaux à mettre -->
+                    <li><a href="https://github.com/{{ site.github_username }}">Github</a></li>
+                    <li><a href="mailto:{{ site.email }}">Email</a></li>
+                </ul>
+        </aside>
+    </div>
+</body>
+<!-- footer à faire -->
+</html>
