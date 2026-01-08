@@ -1,3 +1,6 @@
+---
+---
+// toujours veiller à mettre les tirets pour jekyll
 body {
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     background-color: #1b1b1e;
@@ -69,6 +72,8 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     height: 100vh;
     // modif à faire
+    // sticky permet aux colonnes de gauche/droite de rester fixe
+    // lors du scroll
 }
 
 // Contenu principal
