@@ -1,7 +1,6 @@
 ---
 ---
 // toujours veiller à mettre les tirets pour jekyll
-
 // définition des couleurs du thème (les variables fonctionne avec scss)
 // Couleur du fond :
 $background-color: #1b1b1e;
@@ -114,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
 
 // Contenu de droite
 .colonne-droite {
-    border-left: 1px solid $skill-border;
+    border-left: 1px solid $nav-border;
     background: $nav-background;
     padding: 30px;
     border-right: none;
@@ -122,13 +121,14 @@ h1, h2, h3, h4, h5, h6 {
     position: sticky;
     top: 0;
     height: 100vh;
+    box-sizing: border-box;
 }
 
 // Titre et compétence
 .titre-skills {
     font-size: 1.5em;
     margin-bottom: 15px;
-    border-bottom: 2px solid $skill-border;
+    border-bottom: 2px solid $rouge-vif;
     padding-bottom: 5px;
 }
 
