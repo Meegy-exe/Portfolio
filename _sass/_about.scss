@@ -68,8 +68,10 @@ h4 {
     display: grid;
     align-items: start;
     // 2fr pour gauche large et 1 fr pour droite plus petite
-    grid-template-columns: 2fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 50px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 // Bloc des sections
@@ -130,6 +132,11 @@ h4 {
     position: relative;
     padding-left: 15px;
     margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.colonne-droite-ap .list-cv li {
+    margin-bottom: 5px;
 }
 
 // pour ajouter une flèche devant chaque li

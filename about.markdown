@@ -16,7 +16,7 @@ order: 1
     </div>
 
     <div class="grid-formation">
-     <div class="colonne-gauche">
+     <div class="colonne-gauche-ap">
             <section class="section">
                 <h3>Formations</h3>
                 <div class="carte-formation">
@@ -71,7 +71,7 @@ order: 1
         </section>
         </div>
     
-        <div class="colonne-droite">
+        <div class="colonne-droite-ap">
             <section class="section">
             <h3>Compétences techniques</h3>
                 <div class="skills-container">
