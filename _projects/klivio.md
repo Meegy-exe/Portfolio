@@ -13,7 +13,15 @@ order: 1
 <!-- {: width="150px"} -->
 
 ## Présentation
-Klivio est une plateforme proposant des formations en ligne.
+Klivio est une plateforme proposant des formations en ligne.<br>
+
+### Technologies utilisées 
+
+<div class="tech-projet">
+{%for tech in page.techs %}
+<span class="tech">{{ tech }}</span>
+{% endfor %}
+</div> <br>
 
 ### Liens des projets
 * [Voir le projet HTML / CSS](https://meegy-exe.github.io/Klivio/html-css/){:target="_blank"}

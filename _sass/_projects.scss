@@ -11,7 +11,7 @@
     border-bottom: 1px solid $nav-border;
     margin-bottom: 40px;
     padding-bottom: 20px;
-}   
+}
 
 
 // Titre du projet
@@ -43,4 +43,23 @@ p {
     margin-bottom: 15px;
 }
 
-// Liste des technologies utilisées à rajouter
+
+
+// PAGE DES PROJETS DETAILLES
+
+// Liste des technologies utilisées (div)
+.tech-projet {
+    display: flex;
+    gap: 10px;
+    margin: 10px0 20px 0;
+}
+
+// les spans
+.tech {
+    background-color: $skill-background;
+    color: $rouge-vif;
+    border: 1px solid $skill-border;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
