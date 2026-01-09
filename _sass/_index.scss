@@ -1,0 +1,53 @@
+// Style page d'accueil
+
+// Div du contenu de l'accueil
+.container-accueil {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    // prend la hauteur pour centrer le contenu
+    min-height: 60vh;
+
+}
+
+// Div bloc qui contient le texte accueil
+.head-accueil {
+    padding-left: 10px;
+    margin-top: 20px;
+    border-left: 3px solid $rouge-vif;
+}
+
+
+// Sous titre recherche d'alternance
+#recherche-alt {
+    margin-bottom: 10px;
+    font-weight: normal;
+    color: #888;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+// Courte description d'introduction
+.phrase-accroche {
+    color: $text-color;
+    font-size: 2.8em;
+    margin: 0 0 0 20px 0;
+    line-height: 1.1;
+    font-weight: 700;
+
+}
+
+// Texte page accueil
+.text-accueil {
+    color: $text-color;
+    max-width: 600px;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+// Rendre un texte plus voyant
+.text-impact {
+    color: $rouge-vif;
+}
