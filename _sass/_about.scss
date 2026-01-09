@@ -1,0 +1,180 @@
+// Style page à propos
+
+h4 {
+    margin: 5px 0;
+    font-size: 1.2em;
+    color: $text-color;
+}
+
+// Div du contenu a propos
+.container-a-propos {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    // prend la hauteur pour centrer le contenu
+    min-height: 60vh;
+
+}
+
+// Div bloc qui contient le texte a propos
+.head-a-propos {
+    padding-left: 20px;
+    margin-bottom: 50px;
+    border-left: 3px solid $rouge-vif;
+}
+
+
+// Sous titre recherche d'alternance
+#sous-titre-ap {
+    margin-bottom: 5px;
+    font-weight: normal;
+    color: #888;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+// Courte description d'introduction profil
+.context {
+    color: $text-color;
+    font-size: 2.5em;
+    margin: 0 0 20px 0;
+
+}
+
+// Rendre un texte plus voyant
+.text-impact {
+    color: $rouge-vif;
+}
+
+// Texte page a propos
+
+.text-profil{
+    color: $text-color;
+    font-size: 1.1em;
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+// pour cibler les textes en italiques
+.text-profil em {
+    color: $rouge-vif;
+    font-weight: bold;
+    font-style: normal;
+}
+
+// Mise en page en 2 colonnes
+.grid-formation {
+    display: grid;
+    align-items: start;
+    // 2fr pour gauche large et 1 fr pour droite plus petite
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+}
+
+// Bloc des sections
+.section {
+    margin-bottom: 40px;
+}
+
+.section h3 {
+    // inline block pour que le border bottom ne prenne que la largeur du texte
+    display: inline-block;
+    color: $rouge-vif;
+    margin-bottom: 25px;
+    font-size: 1.4em;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+}
+
+// Cartes de formation et experience
+// crée une ligne verticale à gauche
+.carte-formation {
+    position: relative;
+    margin-bottom: 35px;
+    padding-left: 25px;
+    border-left: 2px solid $rouge-vif;
+}
+
+
+// Date cv
+.date {
+    color: #888;
+    font-size: 0.85em;
+    margin-bottom: 5px;
+    font-family: $font-date;
+}
+
+// Endroit formation / experience
+.structure {
+    color: #aaa;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #ccc;
+    line-height: 1.5;
+    font-size: 0.95em;
+}
+
+// Liste (compétence, interet)
+.list-cv {
+    margin-top: 5px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.list-cv li {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 8px;
+}
+
+// pour ajouter une flèche devant chaque li
+
+.list-cv li::before {
+    content: '➤';
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: $rouge-vif;
+}
+
+
+// Compétence
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    // sil n'y a plus de place passe à la ligne
+}
+
+.sk{
+    padding: 5px 12px;
+    font-size: 0.9em;
+    color: $skill-text-color;
+    border: 1px solid $skill-border;
+    background-color: $skill-background;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+// RESPONSIVE
+////////////////////////////////////
+
+// Format mobile
+@media (max-width: 768px) {
+    .grid-formation {
+        grid-template-columns: 1fr;
+        // une seule colonne
+        gap: 30px;
+    }
+
+    .head-a-propos {
+        margin-bottom: 30px;
+        padding-left: 15px;
+    }   
+}
+////////////////////////////////////
