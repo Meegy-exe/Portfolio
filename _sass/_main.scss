@@ -81,6 +81,13 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 100vh;
 }
 
+.container img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 // Colonne de gauche
 .colonne-gauche {
     background: $nav-background;

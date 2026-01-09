@@ -16,8 +16,8 @@ order: 1
 Klivio est une plateforme proposant des formations en ligne.
 
 ### Liens des projets
-* [Voir le projet HTML / CSS](https://meegy-exe.github.io/Klivio/html-css/)
-* [Voir le projet TAILWIND / CSS](https://meegy-exe.github.io/Klivio/tailwind/)
+* [Voir le projet HTML / CSS](https://meegy-exe.github.io/Klivio/html-css/){:target="_blank"}
+* [Voir le projet TAILWIND / CSS](https://meegy-exe.github.io/Klivio/tailwind/){:target="_blank"}
 
 ---
 
