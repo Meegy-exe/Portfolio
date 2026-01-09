@@ -1,0 +1,46 @@
+// style pour la page sommaire projets
+
+
+// La div qui englobe les cartes de projets
+.sommaire-projets {
+    margin-top: 20px;
+}
+
+// Carte de projet
+.carte-projet {
+    border-bottom: 1px solid $nav-border;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+}   
+
+
+// Titre du projet
+.carte-projet h3 a {
+    color: $rouge-vif;
+    text-decoration: none;
+    // 130% de la taille de base, em pour accessibilité
+    font-size: 1.3em;
+}
+
+.carte-projet h3 a:hover {
+    margin-left: 5px;
+    transition: 0.2s;
+}
+
+
+// Pour les images de projets
+.carte-projet img {
+    width: 100%;
+    height: auto;
+    border: 2px solid $rouge-vif;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+// Description du projet
+p {
+    color: $text-color;
+    margin-bottom: 15px;
+}
+
+// Liste des technologies utilisées à rajouter
