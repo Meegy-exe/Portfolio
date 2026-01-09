@@ -1,17 +1,41 @@
 ---
 ---
 // toujours veiller à mettre les tirets pour jekyll
+
+// définition des couleurs du thème (les variables fonctionne avec scss)
+// Couleur du fond :
+$background-color: #1b1b1e;
+// Couleur des textes :
+$text-color: #cbd5e1;
+// Couleur des liens :
+$link-color: #ef4444;
+// Fond des colonnes et bordures
+$nav-background: #141416;
+$nav-border: #333;
+
+// Couleur des compétences (html, tailwind, ect):
+$skill-background: #2a2a2a;
+$skill-border: #444;
+
+// Police principale
+$font-family-base: 'Segoe UI', Tahoma, Verdana, sans-serif;
+
+// Couleur rouge vif (accentuation)
+$rouge-vif: #ef4444;
+
+/////////////////////////////
+
 body {
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-    background-color: #1b1b1e;
-    color: #cbd5e1;
+    font-family: $font-family-base;
+    background-color: $background-color;
+    color: $text-color;
     margin: 0;
 }
 
 // Liens
 a {
     text-decoration: none;
-    color: #ef4444;
+    color: $link-color;
     font-weight: bold;
 }
 
@@ -30,17 +54,19 @@ nav a {
 }
 // Hover pour les liens nav
 nav a:hover {
-    color: #ef4444;
+    color: $rouge-vif;
     transition: 0.2s;
     padding-left: 8px;
 }
 
 // Titre
 h1, h2, h3, h4, h5, h6 {
-    color: #fff;
+    color: $text-color;
     margin-top: 0;
 }
 
+/////////////////////////////
+// STRUCTURE DU PORTFOLIO
 /////////////////////////////
 
 // Photo de profil
@@ -51,10 +77,11 @@ h1, h2, h3, h4, h5, h6 {
     height: 100px;
     border-radius: 50%;
     margin: 20px auto;
-    border: 2px solid #ef4444;
+    border: 2px solid $rouge-vif;
 }
 
 // Container structure de base en flex
+// ici display flex pour avoir les 3 colonnes horizontalement
 .container {
     display: flex;
     max-width: 1400px;
@@ -64,9 +91,9 @@ h1, h2, h3, h4, h5, h6 {
 
 // Colonne de gauche
 .colonne-gauche {
-    background: #141416;
+    background: $nav-background;
     padding: 30px;
-    border-right: 1px solid #333;
+    border-right: 1px solid $nav-border;
     width: 260px;
     position: sticky;
     top: 0;
@@ -74,6 +101,8 @@ h1, h2, h3, h4, h5, h6 {
     // modif à faire
     // sticky permet aux colonnes de gauche/droite de rester fixe
     // lors du scroll
+    box-sizing: border-box;
+    // box sizing pour le padding dans la largeur
 }
 
 // Contenu principal
@@ -85,8 +114,8 @@ h1, h2, h3, h4, h5, h6 {
 
 // Contenu de droite
 .colonne-droite {
-    border-left: 1px solid #444;
-    background: #141416;
+    border-left: 1px solid $skill-border;
+    background: $nav-background;
     padding: 30px;
     border-right: none;
     width: 260px;
@@ -99,30 +128,76 @@ h1, h2, h3, h4, h5, h6 {
 .titre-skills {
     font-size: 1.5em;
     margin-bottom: 15px;
-    border-bottom: 2px solid #ef4444;
+    border-bottom: 2px solid $skill-border;
     padding-bottom: 5px;
 }
 
 .sk {
-    background: #2a2a2a;
+    background: $skill-background;
     font-size: medium;
     margin: 3px;
     display: inline-block;
     padding: 4px 10px;
-    border: 1px solid #444;
+    border: 1px solid $skill-border;
     border-radius: 4px;
-    // WARNING taille à vérifier
+    // WARNING taille à 
+    color: #eee;
 }
 
 // Liens réseaux
-.reseaux {
+.reseaux ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
+
 .reseaux li {
     margin-bottom: 10px;
+}
+
+// changer la couleur des liens
+.reseaux a {
+    display: flex;
+    align-items: center;
+    color: $rouge-vif;
 }
 
 
 // footer à faire
 // responsive à faire
+
+
+//////////////////////////////////
+/// RESPONSIVE
+//////////////////////////////////
+
+
+// Format tablettes & petits écrans
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .colonne-gauche, .contenu-principal, .colonne-droite {
+        width: 100%;
+        // toute la largeur
+        height: auto;
+        // sadapte au contenu
+        position: relative;
+        // retire le sticky
+        border: none;
+    }
+
+    // ajout bordure entre les sections
+    .colonne-gauche {
+        border-bottom: 1px solid #333;
+        text-align: center;
+        padding: 20px;
+    }
+    .colonne-droite {
+        border-top: 1px solid #333;
+        padding: 20px;
+    }
+
+    // peut etre cacher d'autre chose
+}
