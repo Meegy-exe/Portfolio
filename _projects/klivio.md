@@ -4,7 +4,8 @@ title: Klivio
 date: 08/12/2025
 description: Site proposant des formations en ligne.
 image: /assets/images/klivio-haut.png
-techs: [HTML, CSS, Tailwind, Responsive]
+techs: [HTML, CSS, Tailwind]
+methodes : [Responsive, Accessibilité, SEO]
 # github_link: https://meegy-exe.github.io/
 order: 1
 ---
@@ -20,6 +21,14 @@ Klivio est une plateforme proposant des formations en ligne.<br>
 <div class="tech-projet">
 {%for tech in page.techs %}
 <span class="tech">{{ tech }}</span>
+{% endfor %}
+</div> <br>
+
+### Méthodes / bonnes pratiques 
+
+<div class="tech-projet">
+{%for methode in page.methodes %}
+<span class="tech">{{ methode }}</span>
 {% endfor %}
 </div> <br>
 

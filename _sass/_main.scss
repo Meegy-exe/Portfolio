@@ -1,8 +1,12 @@
-// fichier sommaire du css des pages
+// structure général du site
+// * passe au dessus de tout
+* {
+    box-sizing: border-box;
+}
 
-// toujours veiller à mettre les tirets pour jekyll
 
 body {
+    display: block;
     font-family: $font-family-base;
     background-color: $background-color;
     color: $text-color;
@@ -170,6 +174,11 @@ h1, h2, h3, h4, h5, h6 {
 
 // Format tablettes & petits écrans
 @media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+
     .container {
         flex-direction: column;
     }

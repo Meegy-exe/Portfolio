@@ -8,10 +8,10 @@ order: 3
 
 <div class="container-contact">
     <div class="head-contact">
-        <h1 class="titre-contact"><span class="text-impact">Contactez-</span>moi</h1>
+        <h1 class="titre-contact"><span class="text-impact">Contactez-moi</span></h1>
         <p class="description-contact">
         Je recherche actuellement une <strong>alternance</strong>.<br>
-        Vous pouvez m'en suivre sur les réseaux, ou m'envoyez un message via le formulaire !
+        Vous pouvez me suivre sur les réseaux, ou m'envoyer un message via le formulaire !
         </p>
 
         <div class="btn-reseaux-contact">
@@ -29,9 +29,8 @@ order: 3
 
             <!-- MAIL -->
             <a href="mailto:{{ site.email }}" class="btn-reseaux">Envoyez-moi un Email</a>
-
-            <p id="accroche-mail">Directement via mon email : <strong>{{ site.email }}</strong></p>
     </div>
+    <p id="accroche-mail">Directement via mon email : <strong>{{ site.email }}</strong></p>
 </div>
 
     <div class="section-formulaire">
