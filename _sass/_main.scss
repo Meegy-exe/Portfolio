@@ -53,24 +53,100 @@ h1, h2, h3, h4, h5, h6 {
 
 // Photo de profil
 .profil-perso {
-    margin-bottom: 20px;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: 20px auto;
-    border: 2px solid $rouge-vif;
-    // pour pas quil ne déplace du rond
-    overflow: hidden;
+    position: relative;
+    // position
+    margin: 100px auto 20px auto;
+    width: 180px;
+    text-align: center;
+    cursor: pointer;
 }
 
-.profil-perso img {
+#avatar {
     // évite les espaces blancs
     display: block;
     width: 100%;
-    height: 100%;
-    //remplit tout le conteneur sans déformer l'image
-    object-fit: cover;
+    height: auto;    
 }
+
+
+// Bulle avatar
+.bulle-avatar {
+    position: absolute;
+    // placement au dessus de l'image
+    bottom: 100%;
+    left: 50%;
+    width: 200px;
+    text-align: center;
+    margin-bottom: 15px;
+    background-color: white;
+    border-radius: 50px;
+    padding: 8px 12px;
+    font-size: 0.9em;
+    // au dessus de tout
+    z-index: 10;
+    font-family: $font-bulle;
+    // par defaut pour lanimation
+    transform: translateX(-50%) scale(0.60);
+    // animation commence a la tete
+    transform-origin: bottom center;
+    color: transparent;
+    // transform = la taille, effet 0.4 = elastique, color pour que les ... disparaissent
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.262, 1.55), color 0.1s ease-out;
+}
+
+// "..." dans la bulle
+.bulle-avatar::before{
+    // affiche
+    content: "...";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    // positionnement
+    transform: translate(-50%, -50%);
+    color: black;
+    font-weight: bold;
+    // centre verticale
+    line-height: 0;
+    font-size: 2em;
+    // pour faire disparaitre
+    transition: opacity 0.2s ease-in 0.1s;
+}
+
+// pour faire disparaitre les "..."
+.profil-perso:hover .bulle-avatar::before {
+    opacity: 0;
+    // ... disparait direct dès hover
+    transition: opacity 0.05s ease-out;
+}
+
+// Animation hover avatar + bulle
+.profil-perso:hover .bulle-avatar {
+    // monte et grossit
+    transform: translateX(-50%) translateY(-10px) scale(1);
+    // changement de couleur
+    background-color: white;
+    color: black;
+    // pour lanimation de retour
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.262, 1.55), color 0.2s ease-in 0.1s;
+
+}
+
+// Queue de la bulle
+.bulle-avatar::after {
+    content: "";
+    position: absolute;
+    // positionnement bas de bulle
+    top: 100%;
+    left: 50%;
+    // transform pour centrer la queue
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    // transparent pour les 3 autres côtés
+    border-color: white transparent transparent transparent;
+}
+
+
 
 // Container structure de base en flex
 // ici display flex pour avoir les 3 colonnes horizontalement
@@ -124,7 +200,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow-y: auto;
     border-left: 1px solid $nav-border;
     background: $nav-background;
-    padding: 30px;
+    padding: 100px 30px 30px 30px;
     border-right: none;
     width: 260px;
     position: sticky;

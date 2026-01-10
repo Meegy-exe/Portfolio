@@ -16,7 +16,7 @@ baseurl: "/Portfolio" # the subpath of your site, e.g. /blog
 url: "https://meegy-exe.github.io"
 
 # Avatar
-avatar: "/assets/images/profil.jpg"
+avatar: "/assets/images/avatar.png"
 
 # THEME ACTUEL
 theme: jekyll-theme-midnight

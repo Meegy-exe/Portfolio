@@ -16,10 +16,12 @@
         <!-- CONTENU DE GAUCHE -->
         <aside class="colonne-gauche">
             <div class="profil-perso">
-                <img src="{{ site.avatar | relative_url }}" alt="Photo de profil">
+                <div class="bulle-avatar">
+                    Vous pouvez aussi m'appeler Meegy!
+                </div>
+                <img src="{{ site.avatar | relative_url }}" alt="Avatar Meegy" id="avatar">
             </div>
-            <h1>Meegy</h1>
-            <div class="statut">Etudiante à Epitech Lille</div>
+
             <nav>
                 <a href="{{ '/' | relative_url }}">Accueil</a>
                 <a href="{{ '/a-propos' | relative_url }}">À propos</a>
