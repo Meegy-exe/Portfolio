@@ -59,6 +59,9 @@ h1, h2, h3, h4, h5, h6 {
     width: 180px;
     text-align: center;
     cursor: pointer;
+    // rond coloré derriere avatar
+    background-color: #ed0000;
+    border-radius: 50%;
 }
 
 #avatar {
@@ -161,7 +164,6 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     max-width: 100%;
     height: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 // Colonne de gauche
