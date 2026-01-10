@@ -1,1 +1,149 @@
 // style pour la page contact
+
+// Div du contenu contact
+.container-contact {
+    max-width: 800px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+}
+
+// Haut du contenu contact
+.head-contact {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.head-contact titre-contact{
+    color: $text-color;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.head-contact description-contact {
+    color: #ccc;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+// Bouton reseaux
+.btn-reseaux-contact {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.btn-reseaux-contact .btn-reseaux{
+    background-color: $background-color;
+    color: $text-color;
+    border: 1px solid $skill-border;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+}
+
+.btn-reseaux-contact .btn-reseaux :hover {
+    background-color: $rouge-vif;
+    border-color: $rouge-vif;
+}
+// WARNING mettre un effet hover
+
+// Rendre un texte plus voyant
+.text-impact {
+    color: $rouge-vif;
+}
+
+// Texte email
+#accroche-mail{
+    color: #888;
+    font-size: 0.9em;
+}
+
+#accroche-mail strong{
+    color: $rouge-vif;
+    font-weight: bold;
+}
+
+// Formulaire
+
+// Div formulaire
+.section-formulaire {
+    background-color: #1a1a1d;
+    border: 1px solid $nav-border;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.section-formulaire sous-titre-formulaire {
+    text-align: center;
+    color: $rouge-vif;
+    font-size: 1.5em;
+    margin-bottom: 25px;
+}
+
+// Bloc formulaire
+.form-bloc {
+    display: flex;
+    flex-direction: column;
+}
+
+// Formulaire
+.form {
+    margin-bottom: 20px;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 8px;
+    color: $text-color;
+    font-weight: bold;
+}
+.form input, .form textarea {
+    width: 100%;
+    background-color: $form-background;
+    padding: 12px;
+    border: 1px solid $skill-border;
+    border-radius: 5px;
+    color: $text-color;
+    font-size: 1em;
+    font-family: $font-date;
+}
+
+// Bouton submit
+#btn-submit {
+    width: 100%;
+    margin-top: 10px;
+    background-color: $skill-background;
+    color: $text-color;
+    padding: 12px 20px;
+    border: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn-submit:hover {
+    background-color: $rouge-vif;
+}
+
+// RESPONSIVE
+////////////////////////////////////
+
+// Format mobile
+@media (max-width: 768px) {
+    .grid-formation {
+        grid-template-columns: 1fr;
+        // une seule colonne
+        gap: 30px;
+    }
+
+    .head-a-propos {
+        margin-bottom: 30px;
+        padding-left: 15px;
+    }   
+}
+////////////////////////////////////

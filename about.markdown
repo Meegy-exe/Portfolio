@@ -35,7 +35,7 @@ order: 1
             <p class="structure">Domicio Douai</p>
             <div class="description">
                 <ul class="list-cv">
-                    <li>Prise en charge du lever, petit déjeuner, repas, souper, du bain, des devoirs, des sorties et du couché, en s’assurant de la sécurité des enfants. </li>
+                    <li>Prise en charge du lever, petit déjeuner, repas, souper, du bain, des devoirs, des sorties et du coucher, en s’assurant de la sécurité des enfants. </li>
                 </ul>
             </div>
         </div>
@@ -100,8 +100,8 @@ order: 1
             <section class="section">
                 <h3>Langues</h3>
                 <ul class="list-cv">
-                    <li>Français :<strong>natif</strong></li>
-                    <li>Anglais :<strong>B1</strong></li>
+                    <li>Français : <strong>natif</strong></li>
+                    <li>Anglais : <strong>B1</strong></li>
                 </ul>
             </section>
 

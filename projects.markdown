@@ -7,6 +7,7 @@ order: 2
 <!-- format de liste pour afficher les differents projets -->
 <!-- source avec accolade -->
 
+
 Mes projets :
 
 <div class="sommaire-projet">
@@ -16,6 +17,6 @@ Mes projets :
                     <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
                 </h3>
                 <p>{{ project.description }}</p>
-                <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+                <a href="{{ project.url | relative_url }}"><img src="{{ project.image | relative_url }}" alt="{{ project.title }}"></a>
         {% endfor %}
 </div>
