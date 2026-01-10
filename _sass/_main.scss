@@ -31,12 +31,13 @@ nav a {
     color: #888;
     padding: 12px 0;
     border-bottom: 1px solid #222;
+    transition: 0.3s;
 
 }
 // Hover pour les liens nav
 nav a:hover {
     color: $rouge-vif;
-    transition: 0.2s;
+    transition: 0.3s;
     padding-left: 8px;
 }
 
@@ -89,6 +90,10 @@ h1, h2, h3, h4, h5, h6 {
 
 // Colonne de gauche
 .colonne-gauche {
+    // shrink garanti quil garde son width
+    flex-shrink: 0;
+    // sur petit ecran garanti le scroll du menu
+    overflow-y: auto;
     background: $nav-background;
     padding: 30px;
     border-right: 1px solid $nav-border;
@@ -113,6 +118,10 @@ h1, h2, h3, h4, h5, h6 {
 
 // Contenu de droite
 .colonne-droite {
+    // shrink garanti quil garde son width
+    flex-shrink: 0;
+    // sur petit ecran garanti le scroll du menu
+    overflow-y: auto;
     border-left: 1px solid $nav-border;
     background: $nav-background;
     padding: 30px;

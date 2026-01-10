@@ -14,8 +14,8 @@ title: Accueil
         </h1>
 
         <p class="text-accueil">
-        C'est en m'engeant avec un ami dans un projet de jeu web, que j'ai pu me découvrir une <strong>passion</strong> pour le code. <br>
-        On y a consacré des mois sans jamais se lasser. <br>
+        C'est en m'engageant avec un ami dans un projet de jeu web, que j'ai pu me découvrir une <strong>passion</strong> pour le code. <br>
+        Nous y avons consacré des mois sans jamais nous en lasser. <br>
         J'ai appris à travailler en <strong>automonie</strong>, en me familiarisant avec différents langages informatiques.<br>
         Le domaine de la programmation était devenu évident : j'ai candidaté auprès de la <strong>Web@cadémie</strong>.
         Et j'ai démarré un cursus de deux ans auprès d'<strong>Epitech Lille</strong>.
