@@ -10,7 +10,7 @@ order: 1
         <h2 id="sous-titre-ap">A propos de moi</h2>
         <h1 class="context">Profil</h1>
         <p class="text-profil">
-        Actuellement étudiante à <strong>Epitech Lille</strong>, je me spécialise dans le <em>développement web</em>.<br>
+        Actuellement étudiante à <strong>Epitech Lille</strong>, je me spécialise pour devenir <em>développeuse web</em>.<br>
         Curieuse, attentive et impliquée, j'aime voir mes projets se construire.
         </p>
     </div>
