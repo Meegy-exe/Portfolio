@@ -1,0 +1,56 @@
+// Style pour le sommaire des projets
+
+// Contenu de la page
+.project-grid {
+    // colonne
+    display: grid;
+    gap: 25px;
+    margin-top: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(300px,  1fr));
+}
+
+// Carte des projets
+.card-project {
+    display: flex;
+    flex-direction: column;
+    color: $text-color;
+    // bg plus clair que celui de base
+    background-color: lighten($nav-background, 5%);
+    border: 1px solid $nav-border;
+    border-radius: 16px;
+    text-decoration: none;
+    // addoucit l hover
+    transition: all 0.3s cubic-bezier(0.25n 0.8, 0.25, 1);
+    box-shadow: 0 4px 6px $background-color;
+}
+
+// Hover carte projet
+.card-project:hover{
+    border-color: $rouge-vif;
+    // monte légèrement
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+// h3 hover
+.card-project:hover h3 {
+    color: $rouge-vif;
+}
+
+// flèche hover
+.card-project:hover .arrow{
+    color: $rouge-vif;
+    transform: translateY(5px);
+}
+
+
+
+.arrow {
+    font-size: 3em;
+    color: $rouge-vif;
+}
+
+// La div qui englobe les cartes de projets
+.sommaire-projets {
+    margin-top: 20px;
+}

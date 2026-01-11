@@ -23,7 +23,7 @@ theme: jekyll-theme-midnight
 
 
 # jekyll prend en compte les collections pour les projets, analyse _projects, déclare en pages et genere les
-
+# Sommaire des projets
 collections:
   projects:
     output: true
