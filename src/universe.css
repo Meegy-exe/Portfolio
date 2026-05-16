@@ -121,7 +121,7 @@
     position: absolute;
     width: 150px;
     height: 2px;
-    background: linear-gradient(90deg, rgba(168, 85, 247, 0.8), transparent);
+    background: linear-gradient(-90deg, rgba(168, 85, 247, 0.8), transparent);
     pointer-events: none;
     z-index: 1;
     /* infini */
