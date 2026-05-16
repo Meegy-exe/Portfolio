@@ -35,7 +35,7 @@ function Home({ onNavigateToProjects }) {
           D'abord autodidacte, je consolide aujourd'hui mes compétences auprès de la <strong className="text-blue-400/80 font-medium">Web@cadémie d'Epitech Lille</strong> pour un cursus intensif de deux ans.
         </p>
         <p>
-          Actuellement, je suis à la recherche d'une <strong className="text-space-text font-medium">alternance de 14 mois pour la période de septembre 2026 à octobre 2027.</strong>
+          Je suis actuellement à la recherche d'une <strong className="text-space-text font-medium">alternance de 14 mois pour la période de septembre 2026 à octobre 2027.</strong>
         </p>
         <p>
           Mobile sur la métropole lilloise et tout le bassin minier (Lens, Arras, Béthune), j'ai hâte de rejoindre une équipe pour continuer à voir des projets se construire, mais cette fois-ci, avec vous !
