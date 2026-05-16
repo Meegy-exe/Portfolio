@@ -1,0 +1,74 @@
+# id d action (titre qui saffichera sur longlet actions sur gitHub)
+name: Déploiement du Portfolio Spatial 🚀
+
+# trigger (en gros: moment pour lancer cette pipeline)
+on:
+  push:
+    # sactive uniquement lors dun push (branche main)
+    branches: ["main"]
+
+# permissions de sécurité
+# donner les droits au bot gitHub (pour le deploiement)
+permissions:
+  # lire le code source
+  contents: read
+  # modifier site
+  pages: write
+  # sauthentifier avec mailjs
+  id-token: write
+
+# pour éviter les bugs, prendre en compte que le dernier push
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+# jobs (instructions du bot)
+jobs:
+  deploy:
+    # deploiement sur github-pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    # sous linux
+    runs-on: ubuntu-latest
+    # autres etapes
+    steps:
+      # 1 étape: télécharge une copie du code source depuis le repo
+      - name: Récupération du code
+        uses: actions/checkout@v4
+
+      # 2 étape: installe Node.js (lire package.json)
+      - name: Installation de Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      # 3 étape: télécharge les librairies (react, tailwind)
+      - name: Installation des dépendances
+        run: npm install
+
+      # 4 étape: compile le projet Vite (transforme JSX/tailwind en HTML/CSS/JS dans un dossier dist)
+      - name: Build du site (Build Vite)
+        run: npm run build
+        # injecte les mdps (crypté de base)
+        env:
+          VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
+          VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
+          VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
+
+      # 6 étape: configure github pages
+      - name: Configuration de GitHub Pages
+        uses: actions/configure-pages@v4
+
+      # 7 étapes: reprend le contenu du dossier dist
+      # une fois cette étape fini, prepare le site fini
+      - name: Préparation du dossier d'envoi
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./dist"
+
+      # 8 étapes: envoie le site sur les serveurs & deploiment
+      - name: Mise en ligne finale
+        id: deployment
+        uses: actions/deploy-pages@v4
