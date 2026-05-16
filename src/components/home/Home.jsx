@@ -20,7 +20,7 @@ function Home({ onNavigateToProjects }) {
 
       {/* sous-titre dev */}
       <h2 className="text-2xl md:text-3xl font-bold text-white/90 mb-8 z-10">
-        développeuse Web <span className="text-blue-400 font-mono text-xl md:text-2xl">in coming_</span>
+        développeuse Web <span className="text-blue-400 font-mono text-xl md:text-2xl">v1.0_</span>
       </h2>
 
       {/* &nbsp;: espace insécable, permet de garder le mot et le signe de ponctuation collé */}
