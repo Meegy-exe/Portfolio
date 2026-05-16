@@ -90,6 +90,8 @@
     position: absolute;
     pointer-events: none;
     z-index: 1;
+    /* animation du haut vers le bas*/
+    animation: shooting-star 4s linear infinite;
 }
 
 /* coordonnée de mouvement */
