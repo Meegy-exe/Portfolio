@@ -1,0 +1,318 @@
+/* fichier css regroupant toute lanimatio (etoiles, planetes, halo) */
+/* @keyframes: obligatoire pour creer un mouvement dune position A à B */
+/* sert uniquement de coordonnées mathématiques */
+/* 1: img de fond d'étoile glisse vers la gauche */
+@keyframes stars-scroll-left {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -10000px 0;
+    }
+}
+
+/* 2: img de fond d'étoile glisse vers le bas a droite */
+@keyframes stars-scroll-right {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 10000px 5000px;
+    }
+}
+
+/* 3: img de fond d'étoile glisse vers le haut */
+@keyframes stars-scroll-up {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 -10000px;
+    }
+}
+
+/* 4: img de fond d'étoile glisse vers le bas a gauche */
+@keyframes stars-scroll-diagonal {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -5000px 5000px;
+    }
+}
+
+/* LAYERS ETOILE */
+/* requière le keyframe pour lui donner une logique à suivre */
+/* 800s: le temps complet de lanimation */
+/* linear: vitesse constance */
+/* infinite: rejoue en boucle lanimation */
+.stars-layer-1 {
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    animation: stars-scroll-left 800s linear infinite;
+}
+
+.stars-layer-2 {
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    animation: stars-scroll-right 600s linear infinite;
+    /* legere opacticité */
+    opacity: 0.2;
+    /* plus zoomé */
+    transform: scale(1.5);
+}
+
+.stars-layer-3 {
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    animation: stars-scroll-up 1000s linear infinite;
+    opacity: 0.1;
+}
+
+.stars-layer-colored {
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    animation: stars-scroll-diagonal 500s linear infinite;
+    opacity: 0.1;
+    /* filter: modifie les couleurs de limg */
+    filter: sepia(1) saturate(3) hue-rotate(200deg) brightness(1.1);
+    /* mix-blend-mode: astuce pour eclaircir la couche du dessous */
+    mix-blend-mode: screen;
+}
+
+
+/* ETOILES FILANTES */
+/* ETOILE FILANTE DE BASE (trait blanc a transparent) */
+.shooting-star {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), transparent);
+    width: 150px;
+    height: 2px;
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* coordonnée de mouvement */
+@keyframes shooting-star {
+
+    /* 0% (invisible), penchée a -45 degres de base */
+    /* scale0 reduit sa taille a zero de base pour quelle grossisse progressivement */
+    0% {
+        transform: translateX(0) translateY(0) rotate(-45deg) scale(0);
+        opacity: 1;
+    }
+
+    /* puis a 70% du temps, reste visible */
+    70% {
+        opacity: 1;
+    }
+
+    /* arrivée a 100%, avance de 1000px en bas à gauche, reprend une taille normale et disparait */
+    100% {
+        transform: translateX(-1000px) translateY(1000px) rotate(-45deg) scale(1);
+        opacity: 0;
+    }
+}
+
+/* ETOILE FILANTE VIOLETTE */
+.shooting-star-purple {
+    position: absolute;
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(168, 85, 247, 0.8), transparent);
+    pointer-events: none;
+    z-index: 1;
+    /* infini */
+    animation: shooting-star-purple 5s linear infinite;
+}
+
+@keyframes shooting-star-purple {
+
+    /* 0% (invisible), penchée a -135 degres de base (pointe haut gauche) */
+    0% {
+        transform: translateX(0) translateY(0) rotate(-135deg) scale(0);
+        opacity: 1;
+    }
+
+    /* puis a 70% du temps, reste visible */
+    70% {
+        opacity: 1;
+    }
+
+    /* arrivée a 100%, avance de 1000px vers haut gauche, reprend une taille normale et disparait */
+    100% {
+        transform: translateX(-1000px) translateY(-1000px) rotate(-135deg) scale(1);
+        opacity: 0;
+    }
+}
+
+
+/* PLANETES */
+/* coordonnées de mouvement des planetes  */
+/* vw: viewport width vh:viewport height (pourcentages de l'ecran) */
+@keyframes drift-right-medium {
+
+    /* position de base */
+    0% {
+        transform: translateX(-20vw) translateY(0) rotate(0deg);
+    }
+
+    100% {
+        transform: translateX(120vw) translateY(-5vh) rotate(60deg);
+        /* va vers la droite en montant un peu et tourne sur elle meme */
+    }
+}
+
+@keyframes drift-right-slow {
+
+    /* position de base (bas a gauche du site) */
+    0% {
+        transform: translateX(-30vw) translateY(10vh);
+    }
+
+    /* va vers la droite et tourne et remonte doucement */
+    100% {
+        transform: translateX(130vw) translateY(-10vh);
+    }
+}
+
+@keyframes drift-left {
+
+    /* position de base (haut à droite du site, hors ecran normalement) */
+    0% {
+        transform: translateX(120vw) translateY(-5vh) rotate(0deg);
+    }
+
+    /* va vers la gauche et redescend doucement en faisant demi tour sur sur elle meme */
+    100% {
+        transform: translateX(-30vw) translateY(10vh) rotate(-180deg);
+    }
+}
+
+/* MOON */
+/* WARNING : a ameliorer */
+.planet-moon {
+    /* astuce: pour donner un effet de cratere avec ombre il faut utliser des dégradés circulaires empilés */
+    background-image:
+        radial-gradient(circle at 30% 30%, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0.2) 12%, transparent 15%),
+        /* 1 cratere */
+        radial-gradient(circle at 70% 60%, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.2) 15%, transparent 20%),
+        /* 2 cratere */
+        radial-gradient(circle at 45% 75%, rgba(15, 23, 42, 0.5) 0%, rgba(15, 23, 42, 0.2) 8%, transparent 10%),
+        /* ajout de lombre */
+        /* 3 cratere (ombre bord droit) */
+        radial-gradient(circle at 30% 30%, transparent 40%, rgba(2, 6, 23, 0.95) 95%);
+    /* halo lumineux derriere */
+    box-shadow: 0 0 30px rgba(148, 163, 184, 0.1);
+    /* cercle parfaitement rond */
+    border-radius: 50%;
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    /* couleur de base (sous les crateres) */
+    background-color: #64748b;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 10;
+    /* va vers la droite en tournant sur elle meme */
+    animation: drift-right-medium 250s linear infinite;
+}
+
+/* MARS */
+/* WARNING : a ameliorer */
+.planet-mars {
+    /* degradé rouge clair / rouge tres foncé */
+    background: radial-gradient(circle at 20% 20%, #b91c1c, #450a0a);
+    /* inset: met l'ombre dans le cercle, donne zone eclairee que dun coté */
+    /* 2eme rgba: petit halo rouge sur lexterieur */
+    box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.9), 0 0 20px rgba(185, 28, 28, 0.2);
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 10;
+    /* va vers la gauche et fait demi tour sur elle meme à linfini */
+    animation: drift-left 200s linear infinite;
+}
+
+/* SATURNE BASE SANS ANNEAUX */
+/* WARNING : a ameliorer */
+.planet-ringed {
+    /* linear-gradient: bande de saturne */
+    /* 160deg: penche le motif */
+    /* astuce degradé */
+    /* d997706 10%: met du orange clair à 10% du motif */
+    /* 92400e 30%: met du orange foncé à 30% du motif  */
+    /* b45309 50%: met du marron a 50% du motif*/
+    background: linear-gradient(160deg, #d97706 10%, #92400e 30%, #b45309 50%, #78350f 70%, #451a03 90%);
+    box-shadow: inset -25px -25px 40px rgba(0, 0, 0, 0.9), 0 0 40px rgba(217, 119, 6, 0.1);
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    opacity: 0.45;
+    pointer-events: none;
+    z-index: 10;
+    /* va vers la droite en montant lentement a linfini */
+    animation: drift-right-slow 350s linear infinite;
+}
+
+/* ::before ::after: evite de creer dautres div */
+/*  */
+/* Anneau avant (au dessus de saturne) */
+.planet-ringed::before {
+    /* border double: cree 2 lignes */
+    border: 15px double rgba(253, 230, 138, 0.4);
+    width: 260%;
+    height: 50%;
+    /* obligatoire pour que ça apparaisse */
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* translate: pour centrer lanneau */
+    /* -15deg effet de perspective */
+    transform: translate(-50%, -50%) rotate(-15deg);
+    border-radius: 50%;
+    /* retire la partie du haut de la bordure (demi anneau) */
+    border-top-color: transparent;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    /* positionné devant la planete */
+    z-index: 15;
+}
+
+/* Anneau arriere (derriere saturne) */
+.planet-ringed::after {
+    border: 15px double rgba(253, 230, 138, 0.15);
+    height: 50%;
+    width: 260%;
+    /* obligatoire pour que ça apparaisse */
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* translate: pour centrer lanneau */
+    /* -15deg effet de perspective */
+    transform: translate(-50%, -50%) rotate(-15deg);
+    border-radius: 50%;
+    /* retire la partie du bas de la bordure (demi anneau) */
+    border-bottom-color: transparent;
+    z-index: -5;
+    /* positionné derriere la planete */
+    filter: blur(1px);
+}
+
+/* FOND GALAXIE */
+/* Le cadre qui tient la galaxie */
+.galaxy-position {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    /* La magie de la 3D CSS : rotateX la couche en arriere, rotateZ l'incline sur le coté */
+    transform: translate(-50%, -50%) rotateX(65deg) rotateZ(-20deg);
+    pointer-events: none;
+    z-index: -2;
+    opacity: 0.85;
+}
