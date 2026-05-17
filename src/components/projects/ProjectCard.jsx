@@ -44,11 +44,11 @@ function ProjectCard({ project }) {
 
                 {/* si il y a une img alors*/}
                 {hasImage ? (
-                    // affiche
                     <img
                         src={project.image}
                         alt={`Miniature du projet ${project.title}`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        onError={(e) => { e.target.src = 'https://via.placeholder.com/400x300/1e293b/60a5fa?text=Image+Indisponible'; e.target.onerror = null; }}
                     />
                 ) : (
                     // sinon fond de base
