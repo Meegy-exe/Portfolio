@@ -1,6 +1,6 @@
 // fichier principal de l'app (chef d'orchestre qui rassemble tous les components)
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import BackgroundSpace from './components/layout/BackgroundSpace';
 import Sidebar from './components/layout/Sidebar';
 import Header from './components/layout/Header';
@@ -29,6 +29,11 @@ function App() {
     searchQuery, setSearchQuery, sortBy, setSortBy,
     currentPage, setCurrentPage, currentProjects, totalPages
   } = useProjects(projectData, 4);
+
+  // quand la var activePage / selectedProject change alors fait scroller luser en haut des projets
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activePage, selectedProject]);
 
   // fonction decoute pour ce qui est tapé dans la barre de recherche
   // si luser tape entrée alors
