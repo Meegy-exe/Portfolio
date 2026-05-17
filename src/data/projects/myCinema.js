@@ -28,7 +28,7 @@ export const myCinema = {
     demoLink: "",
 
     // presentation du projet
-    description: "Ce projet est un dashboard permettant au gérant d'un cinéma fictif d'ajouter, modifier ou supprimer des films dans des salles lors de certaines séances (système CRUD complet).",
+    description: "Ce projet est un dashboard permettant au gérant d'un cinéma d'ajouter, modifier ou supprimer des films dans des salles lors de certaines séances (système CRUD complet).",
     instructions: "Il était demandé de : créer un back-office pour un gérant d'un cinéma (fictif).",
 
     // organisation
