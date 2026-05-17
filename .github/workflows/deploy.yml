@@ -1,5 +1,5 @@
 # id d action (titre qui saffichera sur longlet actions sur gitHub)
-name: Déploiement du Portfolio Spatial 🚀
+name: Déploiement du Portfolio
 
 # trigger (en gros: moment pour lancer cette pipeline)
 on:
