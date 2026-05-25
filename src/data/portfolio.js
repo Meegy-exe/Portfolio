@@ -39,6 +39,7 @@ import { myCinema } from './projects/myCinema.js';
 import { connectIn } from './projects/connectIn.js';
 import { connectInV2 } from './projects/connectInV2.js';
 import { jeuxVideops } from './projects/jeuxvideops.js';
+import { mongoblog } from './projects/mongoBlog.js';
 
 // import { learnsphere } from './projects/learnSphere.js';
 // import { meowCity } from './projects/meowCity.js';
@@ -57,6 +58,7 @@ export const projectData = [
     connectIn,
     connectInV2,
     jeuxVideops,
+    mongoblog,
     // learnsphere,
     // meowCity
 ];
